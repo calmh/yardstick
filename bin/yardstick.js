@@ -10,9 +10,10 @@ var parser = require('nomnom');
 var util = require('util');
 var yatf = require('yatf');
 
+var table = [];
+
 function displayStats(file) {
-    var table = [];
-    var prefix = '';
+    var prefix = '  ';
 
     var code = fs.readFileSync(file, 'utf-8');
     code = code.replace(/^#!.*\n/, '');
@@ -32,9 +33,6 @@ function displayStats(file) {
 
     table.push([ file.blue.bold, cplx.ecc, '-', cplx.codeLines, cplx.commentLines, Math.round(100 * cplx.commentLines / cplx.codeLines) ]);
     walk(cplx);
-
-    yatf(['Scope', 'CC', 'Ar', 'Cd', 'Cm', 'Cm/Cd'], table, { underlineHeaders: true });
-    console.log();
 }
 
 parser.script('measure');
@@ -46,4 +44,6 @@ parser.option('file', {
 
 var opts = parser.parse();
 opts._.forEach(displayStats);
+
+yatf(['Scope', 'CC', 'Ar', 'Cd', 'Cm', 'Cm/Cd'], table, { underlineHeaders: true });
 

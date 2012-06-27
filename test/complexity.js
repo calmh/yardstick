@@ -102,6 +102,18 @@ describe('<toplevel>', function () {
     res.ecc.should.equal(3);
     res.arity.should.equal(0);
     });
+    it('should handle exported function', function () {
+        var code = "module.exports = function () {\n";
+        code += "if (true) {\n";
+        code += "console.log(1);\n";
+        code += "}\n";
+        code += "console.log(2);\n";
+        code += "}\n";
+        var res = complexity(code);
+        res.ecc.should.equal(2);
+        res.codeLines.should.equal(6);
+        res.children['anon@0'].ecc.should.equal(2);
+    });
 });
 describe('line count', function () {
     it ('should be correct for a piece of code', function () {
