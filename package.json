@@ -1,0 +1,33 @@
+{
+  "author": "Jakob Borg <jakob@nym.se> (http://nym.se/)",
+  "name": "yardstick",
+  "description": "Cyclomatic dependency calculator for Javascript",
+  "version": "0.0.1",
+  "homepage": "https://github.com/calmh/yardstick",
+  "repository": {
+    "url": "https://github.com/calmh/yardstick.git"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -R spec"
+  },
+  "bin": {
+    "yardstick": "./bin/yardstick.js"
+  },
+  "preferGlobal": true,
+  "dependencies": {
+    "colors": "0.6.x",
+    "nomnom": ">= 1.5.2",
+    "underscore": "1.3.x",
+    "uglify-js": "1.3.x",
+    "yatf": "1.0.x"
+  },
+  "devDependencies": {
+    "should": "0.6.x",
+    "mocha": "1.1.x"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">= 0.6.x"
+  }
+}
+
