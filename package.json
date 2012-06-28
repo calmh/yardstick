@@ -2,7 +2,7 @@
   "author": "Jakob Borg <jakob@nym.se> (http://nym.se/)",
   "name": "yardstick",
   "description": "Cyclomatic dependency calculator for Javascript",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/calmh/yardstick",
   "repository": {
     "url": "https://github.com/calmh/yardstick.git"
@@ -30,4 +30,3 @@
     "node": ">= 0.6.x"
   }
 }
-
