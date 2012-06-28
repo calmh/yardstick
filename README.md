@@ -5,7 +5,7 @@
      \__, /\__,_/_/   \__,_/____/\__/_/\___/_/|_|
     /____/
 
-yardstick [![build status](https://secure.travis-ci.org/calmh/node-inpath.png)](http://travis-ci.org/calmh/node-inpath)
+yardstick [![build status](https://secure.travis-ci.org/calmh/yardstick.png)](http://travis-ci.org/calmh/yardstick)
 =========
 
 Code metrics for Javascript
