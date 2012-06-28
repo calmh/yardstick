@@ -55,6 +55,39 @@ But metrics such as cyclomatic complexity and number of comments are useless!
 By themselves, possibly. But they can be a handy guide for evaluating areas of
 code that could use some love. It's a tool like anything else.
 
+The cyclomatic complexity reported by `yardstick` differs from `$othertool`!
+----------------------------------------------------------------------------
+
+Like I said, calculating CC for JS code is nontrivial. A common approach for
+other languages is to simply count branching keywords. That doesn't give
+anything like the the full picture in JS since many common control structures
+are instead expressed as function calls. Consider:
+
+    for (var i = 0; i < 5; i++) {
+        /* ... */
+    }
+
+vs
+
+    [0, 1, 2, 3, 4].forEach(function (i) {
+        /* ... */
+    });
+
+Any tool that doesn't recognize those as the same structure is broken. Likewise:
+
+    someEventEmitter.on('something', function (d) {
+        /* ... */
+    }).on('error', function (e) {
+        /* ... */
+    });
+
+Not to mention:
+
+    someEventEmitter.on('something', declaredElsewhere)
+        .on('error', alsoDeclaredElseWhere);
+
+That last case isn't handled well by `yardstick` either...
+
 License
 -------
 
