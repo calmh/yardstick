@@ -52,8 +52,8 @@ Reported Metrics
 But metrics such as cyclomatic complexity and number of comments are useless!
 -----------------------------------------------------------------------------
 
-By themselves, yes. But they can be a handy guide for evaluating areas of code
-that could use some love. It's a tool like anything else.
+By themselves, possibly. But they can be a handy guide for evaluating areas of
+code that could use some love. It's a tool like anything else.
 
 License
 -------
