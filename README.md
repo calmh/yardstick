@@ -91,5 +91,5 @@ That last case isn't handled well by `yardstick` either...
 License
 -------
 
-2-Clause BSD
+MIT
 
